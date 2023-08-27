@@ -30,6 +30,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{66D505
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.Services.Basket", "Services\Basket\FreeCourse.Services.Basket\FreeCourse.Services.Basket.csproj", "{0A7A7BAE-CFC4-4AD3-B90C-55865996ED5D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{E9B339A4-A666-4276-99A1-D7047E330FDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.Services.Discount", "Services\Discount\FreeCourse.Services.Discount\FreeCourse.Services.Discount.csproj", "{6C9D0BC2-F434-4AE2-AC86-47E508C91AC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +60,10 @@ Global
 		{0A7A7BAE-CFC4-4AD3-B90C-55865996ED5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A7A7BAE-CFC4-4AD3-B90C-55865996ED5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A7A7BAE-CFC4-4AD3-B90C-55865996ED5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C9D0BC2-F434-4AE2-AC86-47E508C91AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C9D0BC2-F434-4AE2-AC86-47E508C91AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C9D0BC2-F434-4AE2-AC86-47E508C91AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C9D0BC2-F434-4AE2-AC86-47E508C91AC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +77,8 @@ Global
 		{55818A2C-A85C-4EBA-885B-9B753C1421D8} = {362673FC-8A25-42F4-AFD7-78CEBA7D3772}
 		{66D50539-349A-4CED-BC7D-71071F7E0011} = {681A5EA4-2013-4150-A5E7-993913363318}
 		{0A7A7BAE-CFC4-4AD3-B90C-55865996ED5D} = {66D50539-349A-4CED-BC7D-71071F7E0011}
+		{E9B339A4-A666-4276-99A1-D7047E330FDA} = {681A5EA4-2013-4150-A5E7-993913363318}
+		{6C9D0BC2-F434-4AE2-AC86-47E508C91AC2} = {E9B339A4-A666-4276-99A1-D7047E330FDA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2043778A-A82E-406A-87BB-B4A9085CD09F}
