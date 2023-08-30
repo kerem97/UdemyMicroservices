@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Freecourse.Services.Catalog.Dtos
+namespace FreeCourse.Web.Models.Catalogs
 {
-    public class CourseUpdateDto
+    public class CourseViewModel
     {
         public string Id { get; set; }
         public string Name { get; set; }
@@ -10,9 +10,9 @@ namespace Freecourse.Services.Catalog.Dtos
         public decimal Price { get; set; }
         public string UserId { get; set; }
         public string Picture { get; set; }
-      
-        public FeatureDto Feature { get; set; }
+        public DateTime CreatedTime { get; set; }
+        public FeatureViewModel Feature { get; set; }
         public string CategoryId { get; set; }
-       
+        public CategoryViewModel Category { get; set; }
     }
 }
