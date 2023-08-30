@@ -7,3 +7,4 @@ Services
 --orderApi=>5015
 --fakePaymentApi=>5016
 --gateway=>5000
+--Web=>5010
