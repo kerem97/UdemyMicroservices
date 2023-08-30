@@ -9,7 +9,7 @@
 
     public class Client
     {
-        public string ClienId { get; set; }
+        public string ClientId { get; set; }
         public string ClientSecret { get; set; }
     }
 

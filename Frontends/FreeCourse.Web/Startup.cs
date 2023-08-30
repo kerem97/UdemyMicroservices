@@ -1,10 +1,18 @@
+using FreeCourse.Shared.Service;
 using FreeCourse.Web.Models;
+using FreeCourse.Web.Services;
+using FreeCourse.Web.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using System;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,10 +31,24 @@ namespace FreeCourse.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
 
+
+            services.AddHttpContextAccessor();
+            services.AddHttpClient<IIdentityService, IdentityService>();
+          
+            services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
 
+
+
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, opts =>
+            {
+                opts.LoginPath = "/Auth/SignIn";
+                opts.ExpireTimeSpan = TimeSpan.FromDays(60);
+                opts.SlidingExpiration = true;
+                opts.Cookie.Name = "udemywebcookie";
+            });
 
             services.AddControllersWithViews();
         }
@@ -45,7 +67,7 @@ namespace FreeCourse.Web
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
