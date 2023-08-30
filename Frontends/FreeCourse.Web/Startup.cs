@@ -1,4 +1,5 @@
 using FreeCourse.Shared.Service;
+using FreeCourse.Web.Handler;
 using FreeCourse.Web.Models;
 using FreeCourse.Web.Services;
 using FreeCourse.Web.Services.Interfaces;
@@ -34,8 +35,18 @@ namespace FreeCourse.Web
 
 
             services.AddHttpContextAccessor();
+
+            var serviceApiSettings = Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
+
+            services.AddScoped<ResourceOwnerPasswordTokenHandler>();
+
+
             services.AddHttpClient<IIdentityService, IdentityService>();
-          
+            services.AddHttpClient<IUserService, UserService>(opt =>
+            {
+                opt.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri);
+            }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
             services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
 
