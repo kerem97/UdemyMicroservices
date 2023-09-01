@@ -104,7 +104,7 @@ namespace FreeCourse.Web.Services
 
         }
 
-        public async Task<CourseViewModel> GetByCourseIdAsync(string courseId)
+        public async Task<CourseViewModel> GetByCourseId(string courseId)
         {
             var response = await _client.GetAsync($"courses/{courseId}");
 
@@ -116,6 +116,7 @@ namespace FreeCourse.Web.Services
             var responseSuccess = await response.Content.ReadFromJsonAsync<Response<CourseViewModel>>();
 
             responseSuccess.Data.StockPictureUrl = _photoHelper.GetPhotoStockUrl(responseSuccess.Data.Picture);
+
             return responseSuccess.Data;
         }
 

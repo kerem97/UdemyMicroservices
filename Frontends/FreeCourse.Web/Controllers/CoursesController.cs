@@ -57,7 +57,7 @@ namespace FreeCourse.Web.Controllers
         public async Task<IActionResult> Update(string id)
         {
 
-            var course = await _catalogService.GetByCourseIdAsync(id);
+            var course = await _catalogService.GetByCourseId(id);
 
             var categories = await _catalogService.GetAllCategoriesAsync();
 

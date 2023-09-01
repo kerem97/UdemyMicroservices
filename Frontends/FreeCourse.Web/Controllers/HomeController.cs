@@ -30,7 +30,7 @@ namespace FreeCourse.Web.Controllers
 
         public async Task<IActionResult> Detail(string id)
         {
-            return View(await _catalogService.GetByCourseIdAsync(id));
+            return View(await _catalogService.GetByCourseId(id));
 
 
 
