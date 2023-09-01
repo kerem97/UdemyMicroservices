@@ -50,16 +50,16 @@ namespace FreeCourse.Web.Models.Baskets
             get => !string.IsNullOrEmpty(DiscountCode) && DiscountRate.HasValue;
         }
 
-        //public void CancelDiscount()
-        //{
-        //    DiscountCode = null;
-        //    DiscountRate = null;
-        //}
+        public void CancelDiscount()
+        {
+            DiscountCode = null;
+            DiscountRate = null;
+        }
 
-        //public void ApplyDiscount(string code, int rate)
-        //{
-        //    DiscountCode = code;
-        //    DiscountRate = rate;
-        //}
+        public void ApplyDiscount(string code, int rate)
+        {
+            DiscountCode = code;
+            DiscountRate = rate;
+        }
     }
 }
