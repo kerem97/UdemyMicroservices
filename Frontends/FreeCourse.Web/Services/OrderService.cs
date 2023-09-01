@@ -66,7 +66,7 @@ namespace FreeCourse.Web.Services
             var orderCreatedViewModel = await response.Content.ReadFromJsonAsync<Response<OrderCreatedViewModel>>();
 
             orderCreatedViewModel.Data.IsSuccessful = true;
-            //await _basketService.Delete();
+            await _basketService.Delete();
             return orderCreatedViewModel.Data;
         }
 
