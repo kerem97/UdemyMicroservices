@@ -6,7 +6,7 @@ namespace FreeCourse.IdentityServer.Services
 {
     public class TokenExchangeExtensionGrantValidator : IExtensionGrantValidator
     {
-        public string GrantType => "urn:ieft:params:oauth:grant-type:token-exchange";
+        public string GrantType => "urn:ietf:params:oauth:grant-type:token-exchange";
 
         private readonly ITokenValidator _tokenValidator;
 
